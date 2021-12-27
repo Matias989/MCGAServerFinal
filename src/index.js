@@ -2,11 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const myUser = {
-    email: "MatiasPena93@hotmail.com",
-    password: "155524400"
-}
-
 require('dotenv').config({ path: '.env' });
 
 /* MONGOOSE */
@@ -26,8 +21,10 @@ app.use(cors());
 
 /* ROUTES */
 const productRoutes = require('./routes/product');
+const userRoutes = require('./routes/user');
 
 app.use('/api/product', productRoutes());
+app.use('/api/login', userRoutes());
 
 app.listen(process.env.PORT || 4000, () => {
   console.log(`Productos - MCGA - Running on PORT: ${process.env.PORT || 4000}`);
