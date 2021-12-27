@@ -19,10 +19,10 @@ exports.updateProduct = async (req, res) => {
   try {
     const body = req.body;
 
-    if (!body.productId)
+    if (!body._id)
       return res.status(400).json('No existe el Id del productos.');
 
-    const product = await Product.findByIdAndUpdate(body.productId, body, {
+    const product = await Product.findByIdAndUpdate(body._id, body, {
       new: true,
     });
 
