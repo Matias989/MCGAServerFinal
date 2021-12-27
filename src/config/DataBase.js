@@ -10,4 +10,4 @@ mongoose
     console.error(e);
   });
 
-const building = require('../models/product');
+const product = require('../models/product');
