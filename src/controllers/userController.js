@@ -4,7 +4,7 @@ exports.getUserByEmail = async (req, res) => {
         const body = req.body;
         const user = new User(body);
         const users = await User.find({ email: user.email});
-        console.log(users)
+        console.log(user.email)
         if (users.length === 0)
             return res.status(400).json('Ocurrio un error al intentar buscar el usuario.');
 

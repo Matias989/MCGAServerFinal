@@ -3,6 +3,6 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 
 module.exports = () => {
-  router.get('/', userController.getUserByEmail);
+  router.post('/', userController.getUserByEmail);
   return router;
 };
